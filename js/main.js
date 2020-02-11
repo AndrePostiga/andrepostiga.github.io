@@ -43,6 +43,15 @@
 
     $(document).ready(function(){
 
+        //Calcula experiencias,        
+        $('#experiencias_profissionais_card').html($("#experiencias_profissionais a").length)        
+        //Calcula idade
+        var ageDifMs = Date.now() - Date.UTC(1997,3,15);
+        var ageDate = new Date(ageDifMs); // miliseconds from epoch
+        var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+        $('#idade').html(age)        
+
+
         // Initialize Portfolio grid
         var $portfolio_container = $("#portfolio-grid");
 
@@ -131,6 +140,8 @@
                     }
                 },
         });
+
+        
 
 
     });
